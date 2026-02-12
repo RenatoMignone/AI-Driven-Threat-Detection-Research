@@ -8,12 +8,12 @@ This repository serves as the central hub for the research and laboratory activi
 
 The projects are organized sequentially to guide the learner from foundational network flow analysis to complex malware and anomaly detection tasks.
 
-| Order | Laboratory | Topic | Methods |
-| :---: | :--- | :--- | :--- |
-| **1** | **[01_Network_Flow_Analysis](01_Network_Flow_Analysis/)** | **Network Flow Classification** | Feed-Forward Neural Networks (FFNNs), Weighted Loss, Feature Bias Analysis |
-| **2** | **[02_Malware_Analysis](02_Malware_Analysis/)** | **Malware Classification** | Dynamic API Analysis, RNNs (GRU/LSTM), Graph Neural Networks (GNNs) |
-| **3** | **[03_Network_Anomaly_Detection](03_Network_Anomaly_Detection/)** | **Anomaly Detection (NIDS)** | One-Class SVM, Autoencoders (Reconstruction Error), Unsupervised Clustering |
-| **4** | **[04_NLP_for_Cybersecurity](04_NLP_for_Cybersecurity/)** | **NLP for Cybersecurity** | Bash Command Classification, TF-IDF, Word2Vec, LSTMs for Tactics detection |
+| Order | Laboratory | Topic | Methods | Repository Link |
+| :---: | :--- | :--- | :--- | :--- |
+| **1** | **[01_Network_Flow_Analysis](01_Network_Flow_Analysis/)** | **Network Flow Classification** | Feed-Forward Neural Networks (FFNNs), Weighted Loss, Feature Bias Analysis | [Link](https://github.com/RenatoMignone/network-flow-classification-dl) |
+| **2** | **[02_Malware_Analysis](02_Malware_Analysis/)** | **Malware Classification** | Dynamic API Analysis, RNNs (GRU/LSTM), Graph Neural Networks (GNNs) | [Link](https://github.com/RenatoMignone/malware-api-classification-dl) |
+| **3** | **[03_Network_Anomaly_Detection](03_Network_Anomaly_Detection/)** | **Anomaly Detection (NIDS)** | One-Class SVM, Autoencoders (Reconstruction Error), Unsupervised Clustering | [Link](https://github.com/RenatoMignone/unsupervised-network-intrusion-detection) |
+| **4** | **[04_NLP_for_Cybersecurity](04_NLP_for_Cybersecurity/)** | **NLP for Cybersecurity** | Bash Command Classification, TF-IDF, Word2Vec, LSTMs for Tactics detection | [Link](https://github.com/RenatoMignone/attack-tactic-recognition-nlp) |
 
 > **Note**: Each folder above is a submodule linked to its respective standalone repository. To clone them all, use `git clone --recursive`.
 
@@ -31,27 +31,50 @@ If you have already cloned the repository without submodules, run:
 git submodule update --init --recursive
 ```
 
-## Research Overview
+## Research Hub Overview
 
 ### 1. [Network Flow Classification](01_Network_Flow_Analysis/)
 **Goal**: Classify network flows (Benign vs Malicious) using Deep Learning on the CICIDS2017 dataset.
-- **Key Techniques**: Data cleaning & EDA, Handling class imbalance, deep FFNNs dynamics, and regularization (Dropout, BatchNorm, Weight Decay).
+
+This module focuses on the **full modelling pipeline** for tabular network data. It investigates how **Feed-Forward Neural Networks (FFNNs)** perform against baselines and explores critical real-world issues like **class imbalance** and **bias**.
+- **Key Experiments**:
+    - **Baseline Models**: Shallow FFNNs with varying architectures.
+    - **Bias Analysis**: Investigating disparate impact of features like `Destination Port`.
+    - **Deep Learning**: Deeper FFNNs (3-6 layers) with hyperparameter tuning.
+    - **Regularization**: Application of Dropout, Batch Normalization, and Weight Decay.
 
 ### 2. [Malware Analysis](02_Malware_Analysis/)
 **Goal**: Classify malware families based on dynamic API-call traces.
-- **Key Techniques**: Sequence modeling with RNNs (BiLSTM, GRU), Graph representation learning (GraphSAGE, GNNs) on API-call graphs.
+
+This project tackles the complexity of sequential data in malware analysis. By treating **API call traces** as sequences or graphs, we leverage advanced architectures to identify malicious behavior patterns.
+- **Key Experiments**:
+    - **Feature Exploration**: Frequency-based analysis of API calls.
+    - **Sequence Modeling**: Using **LSTMs** and **GRUs** to capture temporal dependencies in execution traces.
+    - **Graph Learning**: Representing traces as graphs and applying **GraphSAGE** and **GCNs** to learn structural features of malware execution.
 
 ### 3. [Network Anomaly Detection](03_Network_Anomaly_Detection/)
 **Goal**: Detect zero-day attacks in network traffic using unsupervised approaches.
-- **Key Techniques**: Semi-supervised One-Class SVM, Deep Autoencoders for anomaly scoring, Clustering (DBSCAN, K-Means) for attack patterns.
+
+Simulating a scenario where attack labels are unavailable, this lab applies **unsupervised** and **semi-supervised** learning to detect intrusions as anomalies.
+- **Key Experiments**:
+    - **Shallow Anomaly Detection**: **One-Class SVM (OC-SVM)** for outlier detection.
+    - **Deep Anomaly Detection**: **Autoencoders** that flag anomalies based on high reconstruction error.
+    - **Clustering**: using **DBSCAN** and **K-Means** to group similar traffic patterns and isolate attacks.
+    - **Visualization**: Dimensionality reduction with **t-SNE** and **PCA**.
 
 ### 4. [NLP for Attack Tactic Recognition](04_NLP_for_Cybersecurity/)
 **Goal**: Identify attacker intent (Tactics) from Bash command history.
-- **Key Techniques**: Tokenization & Text Preprocessing, Embeddings (Word2Vec), Sequence classification with LSTMs to map commands to MITRE ATT&CK tactics.
+
+Bridging the gap between **Natural Language Processing (NLP)** and cybersecurity, this module classifies raw bash commands into **MITRE ATT&CK tactics** (e.g., *Discovery, Persistence, Execution*).
+- **Key Experiments**:
+    - **Text Preprocessing**: Custom tokenization for shell commands.
+    - **Embeddings**: **TF-IDF** for keyword extraction and **Word2Vec** for semantic representation of commands.
+    - **Sequential Classification**: **Bidirectional LSTMs** to understand the intent behind a sequence of commands.
+    - **Interpretability**: Analyze confusion matrices to understand model decisions.
 
 ## Authors & Contributors
 
-This work is the result of a collaborative effort by:
+This work is the result of a collaborative effort by the following team:
 
 | Name | GitHub | LinkedIn | Email |
 | :--- | :--- | :--- | :--- |
