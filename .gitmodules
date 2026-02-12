@@ -1,0 +1,12 @@
+[submodule "01_Network_Flow_Analysis"]
+	path = 01_Network_Flow_Analysis
+	url = https://github.com/RenatoMignone/network-flow-classification-dl
+[submodule "02_Malware_Analysis"]
+	path = 02_Malware_Analysis
+	url = https://github.com/RenatoMignone/malware-api-classification-dl
+[submodule "03_Network_Anomaly_Detection"]
+	path = 03_Network_Anomaly_Detection
+	url = https://github.com/RenatoMignone/unsupervised-network-intrusion-detection
+[submodule "04_NLP_for_Cybersecurity"]
+	path = 04_NLP_for_Cybersecurity
+	url = https://github.com/RenatoMignone/attack-tactic-recognition-nlp
