@@ -1,6 +1,6 @@
 # AI-Driven Threat Detection Research
 
-![Polito Logo](https://www.polito.it/sites/default/files/styles/polito_logo_png/public/2021-06/logo_polito_0.png?itok=fP7wE_Jj)
+![Polito Logo](https://github.com/RenatoMignone/attack-tactic-recognition-nlp/blob/main/resources/logo_polito.jpg?raw=true)
 
 This repository serves as the central hub for the research and laboratory activities conducted during the **AI and Cybersecurity** course at **Politecnico di Torino**. It aggregates four distinct projects covering the intersection of Artificial Intelligence, Deep Learning, and Natural Language Processing applied to cybersecurity domains.
 
